@@ -1,5 +1,4 @@
 export { default as ControlWrapper } from './ControlWrapper.vue';
-export { default as StringControlRenderer } from './StringControlRenderer.vue';
 export { default as MultiStringControlRenderer } from './MultiStringControlRenderer.vue';
 export { default as NumberControlRenderer } from './NumberControlRenderer.vue';
 export { default as IntegerControlRenderer } from './IntegerControlRenderer.vue';
@@ -10,7 +9,6 @@ export { default as DateTimeControlRenderer } from './DateTimeControlRenderer.vu
 export { default as TimeControlRenderer } from './TimeControlRenderer.vue';
 export { default as BooleanControlRenderer } from './BooleanControlRenderer.vue';
 
-import { entry as stringControlRendererEntry } from './StringControlRenderer.vue';
 import { entry as multiStringControlRendererEntry } from './MultiStringControlRenderer.vue';
 import { entry as numberControlRendererEntry } from './NumberControlRenderer.vue';
 import { entry as integerControlRendererEntry } from './IntegerControlRenderer.vue';
@@ -21,8 +19,10 @@ import { entry as dateTimeControlRendererEntry } from './DateTimeControlRenderer
 import { entry as timeControlRendererEntry } from './TimeControlRenderer.vue';
 import { entry as booleanControlRendererEntry } from './BooleanControlRenderer.vue';
 
+import StringControlRenderer from './StringControlRenderer.vue';
+
 export const controlRenderers = [
-  stringControlRendererEntry,
+  {renderer:StringControlRenderer, tester:StringControlRenderer.tester},
   multiStringControlRendererEntry,
   numberControlRendererEntry,
   integerControlRendererEntry,
